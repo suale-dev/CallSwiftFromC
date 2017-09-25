@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BA3DC2751F78B6D000CAD1B8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DC2741F78B6D000CAD1B8 /* main.swift */; };
+		BA3DC27D1F78B7E300CAD1B8 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3DC27C1F78B7E300CAD1B8 /* Bridge.m */; };
+		BA3DC2801F78B88100CAD1B8 /* Source.c in Sources */ = {isa = PBXBuildFile; fileRef = BA3DC27E1F78B88100CAD1B8 /* Source.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		BA3DC2711F78B6D000CAD1B8 /* CallSwiftFromC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CallSwiftFromC; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3DC2741F78B6D000CAD1B8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BA3DC27B1F78B7E300CAD1B8 /* CallSwiftFromC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallSwiftFromC-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA3DC27C1F78B7E300CAD1B8 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		BA3DC27E1F78B88100CAD1B8 /* Source.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Source.c; sourceTree = "<group>"; };
+		BA3DC27F1F78B88100CAD1B8 /* Source.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				BA3DC2741F78B6D000CAD1B8 /* main.swift */,
+				BA3DC27C1F78B7E300CAD1B8 /* Bridge.m */,
+				BA3DC27B1F78B7E300CAD1B8 /* CallSwiftFromC-Bridging-Header.h */,
+				BA3DC27E1F78B88100CAD1B8 /* Source.c */,
+				BA3DC27F1F78B88100CAD1B8 /* Source.h */,
 			);
 			path = CallSwiftFromC;
 			sourceTree = "<group>";
@@ -94,6 +104,7 @@
 				TargetAttributes = {
 					BA3DC2701F78B6D000CAD1B8 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -120,6 +131,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3DC27D1F78B7E300CAD1B8 /* Bridge.m in Sources */,
+				BA3DC2801F78B88100CAD1B8 /* Source.c in Sources */,
 				BA3DC2751F78B6D000CAD1B8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,8 +249,12 @@
 		BA3DC2791F78B6D000CAD1B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CallSwiftFromC/CallSwiftFromC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -245,8 +262,11 @@
 		BA3DC27A1F78B6D000CAD1B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CallSwiftFromC/CallSwiftFromC-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

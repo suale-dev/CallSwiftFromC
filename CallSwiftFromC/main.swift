@@ -8,5 +8,15 @@
 
 import Foundation
 
-print("Hello, World!")
+@objc class SwiftClass : NSObject {
+    @objc static func swiftStaticMethod() {
+        print("swiftStaticMethod")
+    }
+    
+    @objc func swiftMethod(){
+        print("swiftMethod")
+    }
+}
+
+cFunction()
 
